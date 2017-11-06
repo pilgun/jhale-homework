@@ -13,7 +13,7 @@ printf '| %-10s | %-6s |\n' "Name" "Number";
 echo '-----------------------'
 for name in ${GIRLS[*]}
 do
-n=$(grep -c ${name} ${FILE})
+n=$(grep -io ${name} ${FILE} | wc -l)
 printf '| %-10s | %-6s |\n' $name $n;
 done
 exit 0
